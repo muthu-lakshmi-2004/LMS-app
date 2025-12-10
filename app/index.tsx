@@ -31,6 +31,8 @@ export default function LoginScreen() {
     { label: "Loyola College", value: "Loyola College" },
     { label: "PSG College of Technology", value: "PSG College of Technology" },
   ];
+  const [showMenu, setShowMenu] = useState(false);
+
 
   return (
     <View style={{ flex: 1, backgroundColor: "#fcfaf0" }}>
@@ -39,9 +41,29 @@ export default function LoginScreen() {
           <Text style={styles.courseBtn}>Course</Text>
         </Pressable>
         <Text style={styles.desk}>desk</Text>
-        <Text style={styles.home} onPress={() => router.push("/Home")}>
-          Home
-        </Text>
+        <TouchableOpacity
+          style={styles.menuButton}
+          onPress={() =>  {router.push("/MenuBar"); setShowMenu(!showMenu)}}
+        >
+          <Text style={styles.menuText}>☰ </Text>
+        </TouchableOpacity>
+
+        {/* Dropdown Menu */}
+        {showMenu && (
+          <View style={styles.dropdown}>
+            <TouchableOpacity style={styles.item}>
+              <Text style={styles.itemText}>Home</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.item}>
+              <Text style={styles.itemText}>Profile</Text>
+            </TouchableOpacity>
+
+            <TouchableOpacity style={styles.item}>
+              <Text style={styles.itemText}>Settings</Text>
+            </TouchableOpacity>
+          </View>
+        )}
       </View>
 
       <View style={styles.container}>
@@ -93,21 +115,49 @@ export default function LoginScreen() {
 }
 
 const styles = StyleSheet.create({
+  
   topRow: {
     flexDirection: "row",
+    position: "absolute",
+    top: 0,
+    left: 0,
+    right: 0,
+    height: 100,
     marginTop: 30,
     alignItems: "center",
     justifyContent: "space-between",
     padding: 20,
+    
   },
   desk: {
-    flex: 1,
     padding: 20,
+    fontSize: 20,
   },
   container: {
     flex: 1,
     justifyContent: "center",
     padding: 20,
+  },
+  menuButton: {
+    borderRadius: 8,
+    width: 100,
+  },
+
+  menuText: {
+    color: "#334456",
+    fontSize: 30,
+    textAlign: "center",
+    fontWeight: "bold",
+  },
+
+  item: {
+    paddingVertical: 10,
+    paddingHorizontal: 15,
+  },
+
+  itemText: {
+    fontSize: 16,
+    borderBlockColor: "#1a1a1aff",
   },
   box: {
     backgroundColor: "#fdf2e7ff",
@@ -117,8 +167,14 @@ const styles = StyleSheet.create({
     borderBottomWidth: 10,
     borderTopWidth: 2,
     borderLeftWidth: 2,
+    borderColor: "#515050ff",
+    marginTop:200,
   },
-  title: { fontSize: 40, textAlign: "center", fontWeight: "bold" },
+  title: {
+    fontSize: 40,
+    textAlign: "center",
+    fontWeight: "bold",
+  },
   label: {
     fontSize: 18,
     fontWeight: "bold",
@@ -145,9 +201,9 @@ const styles = StyleSheet.create({
   },
   button: {
     backgroundColor: "#eab308",
-    padding: 15,
-    borderRadius: 6,
-    marginTop: 20,
+    padding: 18,
+    borderRadius: 8,
+    marginTop: 30,
   },
   btnText: { color: "white", fontWeight: "bold", textAlign: "center" },
   organi: {
@@ -158,9 +214,20 @@ const styles = StyleSheet.create({
   },
   courseBtn: {
     backgroundColor: "#334456",
-    padding: 10,
     borderRadius: 6,
     color: "white",
+    fontWeight: "bold",
+    textAlign: "center",
+    justifyContent: "center",
+    alignItems: "center", 
+    fontSize: 25,
+    width:"160%",
+    height:60,
+    padding: 12,
   },
-  home: { fontSize: 22, fontWeight: "bold", color: "#334456" },
+  home: {
+    fontSize: 22,
+    fontWeight: "bold",
+    color: "#334456",
+  },
 });
