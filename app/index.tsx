@@ -23,7 +23,7 @@ import eduction_1 from "../assets/images/sym1.jpeg";
 import eduction_3 from "../assets/images/sym3.jpeg";
 import eduction_4 from "../assets/images/sym4.jpeg";
 import NavBar from "@/components/Nav Bar/NavBar";
-
+import Footer from "@/components/Footer/Footer"
 
 
 const Home = () => {
@@ -343,6 +343,7 @@ const videoRef = useRef<Video | null>(null);
             </View>
           </View>
         </View>
+        <Footer />
       </ScrollView>
     </View>
   );

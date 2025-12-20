@@ -117,7 +117,6 @@ const styles = StyleSheet.create({
     borderTopWidth: 2,
     borderLeftWidth: 2,
     borderColor: "#515050ff",
-    marginTop: 140, 
     height:450,
   },
   title: {

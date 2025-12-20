@@ -14,15 +14,14 @@ export default function NavBar() {
 
   return (
     <View style={styles.topRow}>
-      {/* Left side button */}
       <Pressable>
         <Text style={styles.courseBtn}>Course</Text>
       </Pressable>
 
-      {/* Center text */}
+    
       <Text style={styles.desk}>desk</Text>
 
-      {/* Right menu button */}
+   
       <TouchableOpacity
         style={styles.menuButton}
         onPress={() => router.push("/MenuBar")}
@@ -36,10 +35,8 @@ export default function NavBar() {
 const styles = StyleSheet.create({
   topRow: {
     flexDirection: "row",
-    position: "absolute", // always top
-    top: 30,
-    left: 0,
-    right: 0,
+    position: "static", 
+    marginTop: 30,
     height: 80,
     alignItems: "center",
     justifyContent: "space-between",
