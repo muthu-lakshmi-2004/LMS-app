@@ -1,0 +1,14 @@
+{
+    "user":[
+      {
+        "id": "1",
+        "email": "muthulakshmi.kraysinfotech@gmail.com",
+        "password": "muthu@123"
+      },
+      {
+        "id": "2",
+        "email": "ramya.kraysinfotech@gmail.com",
+        "password": "ramya@123"
+      }
+    ]
+}
